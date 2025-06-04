@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using System;
 
-[CreateAssetMenu(fileName = "UserData", menuName = "NewUserData")]
-public class UserData : ScriptableObject
+[Serializable] 
+public class UserData
 {
-    [Header("User Data")]
-    public string userName;
-    public int Balance;
-    public int Cash;
+    public string name;
+    public int cash;
+    public int balance;
+    
+    public UserData(string name, int cash, int balance)
+    {
+        this.name = name;
+        this.cash = cash;
+        this.balance = balance;
+    }
 }
