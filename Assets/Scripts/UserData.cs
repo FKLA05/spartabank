@@ -15,4 +15,31 @@ public class UserData
         this.cash = cash;
         this.balance = balance;
     }
+
+    public void Deposit(int amount)
+    {
+        if (cash >= amount)
+        {
+            balance += amount;
+            cash -= amount;
+        }
+        else
+        {
+            
+        }
+    }
+
+    public void Withdraw(int amount)
+    {
+        if (balance >= amount)
+        {
+            balance -= amount;
+            cash += amount;
+        }
+        else
+        {
+            
+        }
+        
+    }
 }

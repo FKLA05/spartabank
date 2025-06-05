@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
+    public InputManager inputManager;
+    
     public GameObject mainMenu;
     public GameObject depositMenu;
     //public GameObject depositBack;
@@ -54,72 +56,79 @@ public class ButtonManager : MonoBehaviour
     }
 
     void OnDepositClicked()
-    {
-        Debug.Log("입금버튼");
+    { ;
         mainMenu.SetActive(false);
         depositMenu.SetActive(true);
     }
 
     void OnDepositBackClicked()
     {
-        Debug.Log("뒤로가기");
         mainMenu.SetActive(true);
         depositMenu.SetActive(false);
     }
 
     void OnDespositCustomClicked()
     {
-        
+        inputManager.CheckNumber();
+        OnDepositAmountClicked(inputManager.custom1);
     }
     
     void OnDesposit50000Clicked()
     {
-        
+        OnDepositAmountClicked(50000);
     }
     
     void OnDesposit30000Clicked()
     {
-        
+        OnDepositAmountClicked(30000);
     }
     
     void OnDesposit10000Clicked()
     {
-        
+        OnDepositAmountClicked(10000);
     }
     
     void OnWithdrawalClicked()
     {
-        Debug.Log("출금버튼");
         mainMenu.SetActive(false);
         withdrawalMenu.SetActive(true);
     }
 
     void OnWithdrawalBackClicked()
     {
-        Debug.Log("뒤로가기");
         mainMenu.SetActive(true);
         withdrawalMenu.SetActive(false);
     }
 
     void OnWithdrawalCustomClicked()
     {
-        
+        inputManager.CheckNumber();
+        OnWithdrawalAmountClicked(inputManager.custom2);
     }
     
     void OnWithdrawal50000Clicked()
     {
-        
+        OnWithdrawalAmountClicked(50000);
     }
     
     void OnWithdrawal30000Clicked()
     {
-        
+        OnWithdrawalAmountClicked(30000);
     }
     
     void OnWithdrawal10000Clicked()
     {
-        
+        OnWithdrawalAmountClicked(10000);
     }
     
+    void OnDepositAmountClicked(int amount)
+    {
+        GameManager.Instance.userData.Deposit(amount);
+    }
+    
+    void OnWithdrawalAmountClicked(int amount)
+    {
+        GameManager.Instance.userData.Withdraw(amount);
+    }
 
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,8 @@ public class UserDataDisplay : MonoBehaviour
     public TMP_Text userNameText;
     public TMP_Text balanceText;
     public TMP_Text cashText;
-
-    void Start()
+    
+    private void Update()
     {
         UpdateDisplay();
     }
