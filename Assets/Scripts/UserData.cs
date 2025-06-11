@@ -22,6 +22,7 @@ public class UserData
         {
             balance += amount;
             cash -= amount;
+            GameManager.Instance.SaveUserData();
         }
         else
         {
@@ -35,6 +36,7 @@ public class UserData
         {
             balance -= amount;
             cash += amount;
+            GameManager.Instance.SaveUserData();
         }
         else
         {

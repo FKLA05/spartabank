@@ -9,19 +9,8 @@ public class ButtonManager : MonoBehaviour
     
     public GameObject mainMenu;
     public GameObject depositMenu;
-    //public GameObject depositBack;
-    //public GameObject depositCustom;
-    //public GameObject deposit50000;
-    //public GameObject deposit30000;
-    //public GameObject deposit10000;
     
     public GameObject withdrawalMenu;
-    //public GameObject withdrawalBack;
-    //public GameObject withdrawalCustom;
-    //GameObject withdrawal50000;
-    //public GameObject withdrawal30000;
-    //public GameObject withdrawal10000;
-        
     
     public Button depositButton;
     public Button withdrawalButton;
